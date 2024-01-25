@@ -8,7 +8,7 @@
 import XCTest
 @testable import Domains
 
-final class DomainsTests: XCTestCase {
+final class MakerTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -18,15 +18,23 @@ final class DomainsTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testSuccessJsonEncodeDecode() throws {
+        let id : Int = 0;
         let name : String = "sample";
-        let maker = Maker(name: name);
-        XCTAssertEqual(name, maker.name);
+        let image : String? = "http://example.com";
+        let maker = Maker(id: id, name: name, image: image)
+        
+        let json = maker.toJson()
+        print(json)
+        
+        let fromJson = "{\"name\":\"sample\",\"image\":\"http://example.com\",\"id\":0}";
+        let fromJsonData = fromJson.data(using: .utf8)!
+        
+        let fromJsonMaker = try! JSONDecoder().decode(Maker.self, from: fromJsonData);
+        
+        XCTAssertEqual(maker.id, fromJsonMaker.id)
+        XCTAssertEqual(maker.name, fromJsonMaker.name)
+        XCTAssertEqual(maker.image, fromJsonMaker.image)
     }
 
     func testPerformanceExample() throws {

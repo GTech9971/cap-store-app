@@ -1,17 +1,17 @@
 //
-//  Maker.swift
+//  Category.swift
 //  Domains
 //
-//  Created by George Dambara on 2024/01/24.
+//  Created by George Dambara on 2024/01/26.
 //
 
 import Foundation
 
-///メーカー
-public struct Maker : Codable , Equatable{
-    public let id: Int;
-    public let name : String;
-    public let image : String?;
+///カテゴリー
+public struct Category : Codable, Equatable {
+    public let id:Int;
+    public let name:String;
+    public let image:String?;
     
     public init(id: Int, name: String, image: String?) {
         self.id = id

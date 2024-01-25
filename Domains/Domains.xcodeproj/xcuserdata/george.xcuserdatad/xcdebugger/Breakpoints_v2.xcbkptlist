@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "F6C01046-B4AE-4879-927E-0CEE0DC889F2"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E8BFF8A6-53CA-41AE-AA52-1D435FE43D2C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DomainsTests/ComponentTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "testSuccessJsonEncodeDecode()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E8BFF8A6-53CA-41AE-AA52-1D435FE43D2C - e0158be0655c4d82"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DomainsTests.ComponentTests.testSuccessJsonEncodeDecode() throws -&gt; ()"
+                  moduleName = "DomainsTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/george/Documents/GitHub/cap-store-app/Domains/DomainsTests/ComponentTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "1148">
+               </Location>
+               <Location
+                  uuid = "E8BFF8A6-53CA-41AE-AA52-1D435FE43D2C - e0158be0655c4d82"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DomainsTests.ComponentTests.testSuccessJsonEncodeDecode() throws -&gt; ()"
+                  moduleName = "DomainsTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/george/Documents/GitHub/cap-store-app/Domains/DomainsTests/ComponentTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "1360">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
