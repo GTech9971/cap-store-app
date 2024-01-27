@@ -24,6 +24,10 @@
 		5EBC4C542B63014A0051C272 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBC4C532B63014A0051C272 /* HTTPMethod.swift */; };
 		5EBC4C5A2B6303A80051C272 /* FetchCatalogAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBC4C592B6303A80051C272 /* FetchCatalogAPIRequest.swift */; };
 		5EBC4C5C2B63063A0051C272 /* CapStoreAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBC4C5B2B63063A0051C272 /* CapStoreAPIRequest.swift */; };
+		5EBCB21F2B6591D8001655DD /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBCB21E2B6591D8001655DD /* HTTPClient.swift */; };
+		5EBCB2212B659467001655DD /* StubHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBCB2202B659467001655DD /* StubHTTPClient.swift */; };
+		5EBCB2232B6595AD001655DD /* CapStoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBCB2222B6595AD001655DD /* CapStoreClient.swift */; };
+		5EBCB2252B659F30001655DD /* CapStoreClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBCB2242B659F30001655DD /* CapStoreClientTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,10 @@
 		5EBC4C532B63014A0051C272 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		5EBC4C592B6303A80051C272 /* FetchCatalogAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCatalogAPIRequest.swift; sourceTree = "<group>"; };
 		5EBC4C5B2B63063A0051C272 /* CapStoreAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapStoreAPIRequest.swift; sourceTree = "<group>"; };
+		5EBCB21E2B6591D8001655DD /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		5EBCB2202B659467001655DD /* StubHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubHTTPClient.swift; sourceTree = "<group>"; };
+		5EBCB2222B6595AD001655DD /* CapStoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapStoreClient.swift; sourceTree = "<group>"; };
+		5EBCB2242B659F30001655DD /* CapStoreClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapStoreClientTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +123,7 @@
 				5E1A464F2B60EBFC00C72265 /* MakerTests.swift */,
 				5EBC4C432B62F4E70051C272 /* CategoryTests.swift */,
 				5EBC4C472B62F6920051C272 /* ComponentTests.swift */,
+				5EBCB2242B659F30001655DD /* CapStoreClientTests.swift */,
 			);
 			path = DomainsTests;
 			sourceTree = "<group>";
@@ -127,6 +136,8 @@
 				5EBC4C4F2B62FF9B0051C272 /* ErrorData.swift */,
 				5EBC4C512B6301010051C272 /* APIRequest.swift */,
 				5EBC4C532B63014A0051C272 /* HTTPMethod.swift */,
+				5EBCB21E2B6591D8001655DD /* HTTPClient.swift */,
+				5EBCB2202B659467001655DD /* StubHTTPClient.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -136,6 +147,7 @@
 			children = (
 				5EBC4C592B6303A80051C272 /* FetchCatalogAPIRequest.swift */,
 				5EBC4C5B2B63063A0051C272 /* CapStoreAPIRequest.swift */,
+				5EBCB2222B6595AD001655DD /* CapStoreClient.swift */,
 			);
 			path = CapStoreAPI;
 			sourceTree = "<group>";
@@ -251,15 +263,18 @@
 			files = (
 				5E1A46642B60EC1300C72265 /* Maker.swift in Sources */,
 				5EBC4C522B6301010051C272 /* APIRequest.swift in Sources */,
+				5EBCB21F2B6591D8001655DD /* HTTPClient.swift in Sources */,
 				5EBC4C462B62F5BA0051C272 /* Component.swift in Sources */,
 				5EBC4C4C2B62FBE30051C272 /* ModelError.swift in Sources */,
 				5E1A46452B60EBFC00C72265 /* Domains.docc in Sources */,
 				5EBC4C4E2B62FF340051C272 /* BaseResponse.swift in Sources */,
 				5EBC4C5C2B63063A0051C272 /* CapStoreAPIRequest.swift in Sources */,
 				5EBC4C4A2B62FACD0051C272 /* CatalogId.swift in Sources */,
+				5EBCB2232B6595AD001655DD /* CapStoreClient.swift in Sources */,
 				5EBC4C422B62F4510051C272 /* Category.swift in Sources */,
 				5EBC4C542B63014A0051C272 /* HTTPMethod.swift in Sources */,
 				5EBC4C502B62FF9B0051C272 /* ErrorData.swift in Sources */,
+				5EBCB2212B659467001655DD /* StubHTTPClient.swift in Sources */,
 				5EBC4C5A2B6303A80051C272 /* FetchCatalogAPIRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +286,7 @@
 				5EBC4C482B62F6920051C272 /* ComponentTests.swift in Sources */,
 				5E1A46502B60EBFC00C72265 /* MakerTests.swift in Sources */,
 				5EBC4C442B62F4E70051C272 /* CategoryTests.swift in Sources */,
+				5EBCB2252B659F30001655DD /* CapStoreClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

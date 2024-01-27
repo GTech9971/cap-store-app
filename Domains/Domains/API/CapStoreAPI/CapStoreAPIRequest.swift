@@ -33,5 +33,16 @@ public extension APIRequest{
         return urlRequest
     }
     
-    
+    func response(from data: Data,
+                  urlResponse : HTTPURLResponse) throws -> Response{
+        let decoder = JSONDecoder()
+        
+        print(urlResponse.statusCode)
+        if(200..<300).contains(urlResponse.statusCode){
+            return try decoder.decode(Response.self, from: data)
+        }else{
+            //TODO
+            throw try decoder.decode(ErrorData.self, from: data)
+        }
+    }
 }

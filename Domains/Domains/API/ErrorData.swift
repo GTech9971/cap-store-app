@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct ErrorData : Codable{
+public struct ErrorData : Codable, Equatable, Error{
     public let code: String;
     public let message: String;
     public let stack: String?;

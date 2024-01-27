@@ -15,6 +15,10 @@ public struct FetchCatalogAPIRequest : APIRequest{
     
     public let catalogId:CatalogId
     
+    public init(catalogId: CatalogId) {
+        self.catalogId = catalogId
+    }
+    
     public typealias Response = BaseResponse<Component>
     
     public var method: HTTPMethod{
@@ -22,7 +26,7 @@ public struct FetchCatalogAPIRequest : APIRequest{
     }
     
     public var path:String{
-        return "/akizuki/catalogs/\(catalogId.id)"
+        return "akizuki/catalogs/\(catalogId.id)"
     }
     
     public var queryItems: [URLQueryItem]{
