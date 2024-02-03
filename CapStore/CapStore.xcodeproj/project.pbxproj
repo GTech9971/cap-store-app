@@ -16,6 +16,8 @@
 		5E1A462A2B60EBD000C72265 /* CapStoreUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A46292B60EBD000C72265 /* CapStoreUITestsLaunchTests.swift */; };
 		5E1A46692B60ECE500C72265 /* Domains.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1A46602B60EBFD00C72265 /* Domains.framework */; };
 		5E1A466A2B60ECE500C72265 /* Domains.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1A46602B60EBFD00C72265 /* Domains.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5EA85BC42B6E46070003A35A /* Domains.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1A46602B60EBFD00C72265 /* Domains.framework */; };
+		5EA85BC52B6E46070003A35A /* Domains.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1A46602B60EBFD00C72265 /* Domains.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,17 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5EA85BC62B6E46070003A35A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5EA85BC52B6E46070003A35A /* Domains.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EA85BC42B6E46070003A35A /* Domains.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +203,7 @@
 				5E1A46042B60EBCF00C72265 /* Sources */,
 				5E1A46052B60EBCF00C72265 /* Frameworks */,
 				5E1A46062B60EBCF00C72265 /* Resources */,
+				5EA85BC62B6E46070003A35A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -499,7 +514,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CapStore/Preview Content\"";
-				DEVELOPMENT_TEAM = K76HM8C645;
+				DEVELOPMENT_TEAM = 7R4Y9AC5RD;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -526,7 +541,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CapStore/Preview Content\"";
-				DEVELOPMENT_TEAM = K76HM8C645;
+				DEVELOPMENT_TEAM = 7R4Y9AC5RD;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
