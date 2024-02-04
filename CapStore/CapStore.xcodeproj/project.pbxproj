@@ -20,6 +20,7 @@
 		5EA85BC52B6E46070003A35A /* Domains.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1A46602B60EBFD00C72265 /* Domains.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5ED99A672B701E9F006707CF /* PartsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED99A662B701E9F006707CF /* PartsCard.swift */; };
 		5ED99A6A2B701FAF006707CF /* PartsCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED99A692B701FAF006707CF /* PartsCardModel.swift */; };
+		5ED99A6C2B702B5C006707CF /* PartsCardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED99A6B2B702B5C006707CF /* PartsCardList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		5E1A465A2B60EBFC00C72265 /* Domains.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Domains.xcodeproj; path = ../Domains/Domains.xcodeproj; sourceTree = "<group>"; };
 		5ED99A662B701E9F006707CF /* PartsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsCard.swift; sourceTree = "<group>"; };
 		5ED99A692B701FAF006707CF /* PartsCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsCardModel.swift; sourceTree = "<group>"; };
+		5ED99A6B2B702B5C006707CF /* PartsCardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsCardList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				5ED99A662B701E9F006707CF /* PartsCard.swift */,
+				5ED99A6B2B702B5C006707CF /* PartsCardList.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5ED99A6A2B701FAF006707CF /* PartsCardModel.swift in Sources */,
+				5ED99A6C2B702B5C006707CF /* PartsCardList.swift in Sources */,
 				5E1A460E2B60EBCF00C72265 /* ContentView.swift in Sources */,
 				5E1A460C2B60EBCF00C72265 /* CapStoreApp.swift in Sources */,
 				5ED99A672B701E9F006707CF /* PartsCard.swift in Sources */,

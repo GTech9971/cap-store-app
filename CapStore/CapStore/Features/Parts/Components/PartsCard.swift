@@ -8,12 +8,10 @@
 import SwiftUI
 
 struct PartsCard: View {
-    @State var isSelected : Bool;
     private let model : PartsCardModel
     
     public init(model: PartsCardModel) {
-        self.model = model
-        self.isSelected = false
+        self.model = model;
     }
     
     var body: some View {
@@ -30,25 +28,16 @@ struct PartsCard: View {
             .padding(.vertical, 3.0)
             .padding(.horizontal, 3.0)
         }
+        .frame(maxHeight: 50)
         .padding()
         .cornerRadius(8.0)
-        .clipped()
         .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
         //.contentShapeでタップ領域を広げる
         .contentShape(RoundedRectangle(cornerRadius: 20))
-        //タップ時に背景色を変更
-        .background(isSelected ?  Color.accentColor : Color.clear)
-        .onTapGesture {
-            isSelected.toggle()
-        }
     }
 }
 
 #Preview {
-    PartsCard(model: PartsCardModel(
-            name: "PICマイコン PIC16F18444-I/P",
-            modelName: "PIC16F18444-I/P",
-            makerName: "MicrochipTechnology"
-        )
+    PartsCard(model: PartsCardModel.SAMPLE[0]
     )
 }
