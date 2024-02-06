@@ -9,21 +9,17 @@ import SwiftUI
 
 struct PartsCardList: View {
     @Binding var selection : UUID?
-    
-    @ObservedObject var partsCardViewModel = PartsCardViewModel()
+    @Binding var models: [PartsCardModel];
     
     var body: some View {
         List(selection : $selection){
-            ForEach(partsCardViewModel.models){ model in
+            ForEach(self.models){ model in
                 PartsCard(model: model)
-                    .onAppear(){
-                        self.partsCardViewModel.fetchNext()
-                    }
             }
         }
     }
 }
 
 #Preview {
-    PartsCardList(selection: .constant(nil))
+    PartsCardList(selection: .constant(nil), models: .constant([]))
 }

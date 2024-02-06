@@ -9,8 +9,10 @@ import SwiftUI
 
 
 struct PartsHomePage: View {
-    @State private var selectCategoryId : UUID?;
+    @State private var selectCardId : UUID?;
     @State private var searchText : String = "";
+    
+    @ObservedObject var partsCardViewModel = PartsCardViewModel()
     
     var body: some View {
         NavigationSplitView{
@@ -18,8 +20,11 @@ struct PartsHomePage: View {
                 .navigationSplitViewColumnWidth(180)
         }
     content:{
-        PartsCardList(selection: $selectCategoryId)
+        PartsCardList(selection: $selectCardId, models:$partsCardViewModel.models)
             .navigationSplitViewColumnWidth(ideal:120)
+            .onAppear{
+                self.partsCardViewModel.fetchNext()
+            }
     }
     detail: {
         PartsContentView()
@@ -27,7 +32,9 @@ struct PartsHomePage: View {
     .navigationTitle("電子部品マスター")
     .toolbar(content: {
         ToolbarItem(id:"new", placement: .navigation){
-            Button(action:{}, label:{
+            Button(action:{
+                print(self.$selectCardId);
+            }, label:{
                 Label("new", systemImage: "square.and.pencil")
             })
         }
