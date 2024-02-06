@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E1574382B72012000047ED4 /* FetchComponentAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1574372B72012000047ED4 /* FetchComponentAPIRequest.swift */; };
+		5E15743A2B7202C300047ED4 /* BasePageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1574392B7202C200047ED4 /* BasePageResponse.swift */; };
 		5E1A46452B60EBFC00C72265 /* Domains.docc in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A46442B60EBFC00C72265 /* Domains.docc */; };
 		5E1A464B2B60EBFC00C72265 /* Domains.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1A46402B60EBFC00C72265 /* Domains.framework */; };
 		5E1A46502B60EBFC00C72265 /* MakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A464F2B60EBFC00C72265 /* MakerTests.swift */; };
 		5E1A46512B60EBFC00C72265 /* Domains.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E1A46432B60EBFC00C72265 /* Domains.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5E1A46642B60EC1300C72265 /* Maker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A46632B60EC1300C72265 /* Maker.swift */; };
+		5E7CC8542B72045500CD5D5D /* FetchComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7CC8532B72045500CD5D5D /* FetchComponentTests.swift */; };
 		5EBC4C422B62F4510051C272 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBC4C412B62F4510051C272 /* Category.swift */; };
 		5EBC4C442B62F4E70051C272 /* CategoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBC4C432B62F4E70051C272 /* CategoryTests.swift */; };
 		5EBC4C462B62F5BA0051C272 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBC4C452B62F5BA0051C272 /* Component.swift */; };
@@ -41,12 +44,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E1574372B72012000047ED4 /* FetchComponentAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchComponentAPIRequest.swift; sourceTree = "<group>"; };
+		5E1574392B7202C200047ED4 /* BasePageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePageResponse.swift; sourceTree = "<group>"; };
 		5E1A46402B60EBFC00C72265 /* Domains.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domains.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E1A46432B60EBFC00C72265 /* Domains.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domains.h; sourceTree = "<group>"; };
 		5E1A46442B60EBFC00C72265 /* Domains.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Domains.docc; sourceTree = "<group>"; };
 		5E1A464A2B60EBFC00C72265 /* DomainsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DomainsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E1A464F2B60EBFC00C72265 /* MakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakerTests.swift; sourceTree = "<group>"; };
 		5E1A46632B60EC1300C72265 /* Maker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maker.swift; sourceTree = "<group>"; };
+		5E7CC8532B72045500CD5D5D /* FetchComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchComponentTests.swift; sourceTree = "<group>"; };
 		5EBC4C412B62F4510051C272 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		5EBC4C432B62F4E70051C272 /* CategoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTests.swift; sourceTree = "<group>"; };
 		5EBC4C452B62F5BA0051C272 /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
@@ -124,6 +130,7 @@
 				5EBC4C432B62F4E70051C272 /* CategoryTests.swift */,
 				5EBC4C472B62F6920051C272 /* ComponentTests.swift */,
 				5EBCB2242B659F30001655DD /* CapStoreClientTests.swift */,
+				5E7CC8532B72045500CD5D5D /* FetchComponentTests.swift */,
 			);
 			path = DomainsTests;
 			sourceTree = "<group>";
@@ -133,6 +140,7 @@
 			children = (
 				5EBC4C562B63029A0051C272 /* CapStoreAPI */,
 				5EBC4C4D2B62FF340051C272 /* BaseResponse.swift */,
+				5E1574392B7202C200047ED4 /* BasePageResponse.swift */,
 				5EBC4C4F2B62FF9B0051C272 /* ErrorData.swift */,
 				5EBC4C512B6301010051C272 /* APIRequest.swift */,
 				5EBC4C532B63014A0051C272 /* HTTPMethod.swift */,
@@ -148,6 +156,7 @@
 				5EBC4C592B6303A80051C272 /* FetchCatalogAPIRequest.swift */,
 				5EBC4C5B2B63063A0051C272 /* CapStoreAPIRequest.swift */,
 				5EBCB2222B6595AD001655DD /* CapStoreClient.swift */,
+				5E1574372B72012000047ED4 /* FetchComponentAPIRequest.swift */,
 			);
 			path = CapStoreAPI;
 			sourceTree = "<group>";
@@ -270,8 +279,10 @@
 				5EBC4C4E2B62FF340051C272 /* BaseResponse.swift in Sources */,
 				5EBC4C5C2B63063A0051C272 /* CapStoreAPIRequest.swift in Sources */,
 				5EBC4C4A2B62FACD0051C272 /* CatalogId.swift in Sources */,
+				5E1574382B72012000047ED4 /* FetchComponentAPIRequest.swift in Sources */,
 				5EBCB2232B6595AD001655DD /* CapStoreClient.swift in Sources */,
 				5EBC4C422B62F4510051C272 /* Category.swift in Sources */,
+				5E15743A2B7202C300047ED4 /* BasePageResponse.swift in Sources */,
 				5EBC4C542B63014A0051C272 /* HTTPMethod.swift in Sources */,
 				5EBC4C502B62FF9B0051C272 /* ErrorData.swift in Sources */,
 				5EBCB2212B659467001655DD /* StubHTTPClient.swift in Sources */,
@@ -286,6 +297,7 @@
 				5EBC4C482B62F6920051C272 /* ComponentTests.swift in Sources */,
 				5E1A46502B60EBFC00C72265 /* MakerTests.swift in Sources */,
 				5EBC4C442B62F4E70051C272 /* CategoryTests.swift in Sources */,
+				5E7CC8542B72045500CD5D5D /* FetchComponentTests.swift in Sources */,
 				5EBCB2252B659F30001655DD /* CapStoreClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,7 +505,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7R4Y9AC5RD;
+				DEVELOPMENT_TEAM = K76HM8C645;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = work.nukomabo.DomainsTests;
@@ -509,7 +521,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7R4Y9AC5RD;
+				DEVELOPMENT_TEAM = K76HM8C645;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = work.nukomabo.DomainsTests;
