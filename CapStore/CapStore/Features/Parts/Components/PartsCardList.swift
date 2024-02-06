@@ -10,10 +10,12 @@ import SwiftUI
 struct PartsCardList: View {
     @Binding var selection : UUID?
     
+    @ObservedObject var partsCardViewModel = PartsCardViewModel()
+    
     var body: some View {
         List(selection : $selection){
-            ForEach(PartsCardModel.SAMPLE){ sample in
-                PartsCard(model: sample)
+            ForEach(partsCardViewModel.models){ model in
+                PartsCard(model: model)
             }
         }
     }
