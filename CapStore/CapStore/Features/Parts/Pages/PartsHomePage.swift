@@ -7,26 +7,43 @@
 
 import SwiftUI
 
-private let links : [String] = [
-    "PIC",
-    "Register",
-    "LED",
-    "Sensor",
-    "Battery"
-]
 
 struct PartsHomePage: View {
+    @State private var selectCategoryId : UUID?;
+    @State private var searchText : String = "";
+    
     var body: some View {
         NavigationSplitView{
-            List(CategoryLinkModel.SAMPLES){ sample in
-                NavigationLink(value: sample.id){
-                    CategoryLinkItem(model: sample)
-                }
-            }
-        } detail: {
-            Text("detail")
+            CategoryList()
+                .navigationSplitViewColumnWidth(180)
         }
-        .navigationTitle("マスター")
+    content:{
+        PartsCardList(selection: $selectCategoryId)
+            .navigationSplitViewColumnWidth(ideal:120)
+    }
+    detail: {
+        PartsContentView()
+    }
+    .navigationTitle("電子部品マスター")
+    .toolbar(content: {
+        ToolbarItem(id:"new", placement: .navigation){
+            Button(action:{}, label:{
+                Label("new", systemImage: "square.and.pencil")
+            })
+        }
+        ToolbarItem(id:"trash", placement: .destructiveAction){
+            Button(action:{}, label:{
+                Label("trach", systemImage: "trash")
+            })
+        }
+        ToolbarItem(id:"upload", placement: .secondaryAction){
+            Button(action: {}, label: {
+                Label("upload", systemImage: "square.and.arrow.up")
+            })
+        }
+    })
+    .searchable(text: $searchText)
+        
     }
 }
 

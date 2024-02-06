@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PartsCardList: View {
-    @State private var selection : UUID?
+    @Binding var selection : UUID?
     
     var body: some View {
         List(selection : $selection){
@@ -16,10 +16,9 @@ struct PartsCardList: View {
                 PartsCard(model: sample)
             }
         }
-        .scaledToFit()
     }
 }
 
 #Preview {
-    PartsCardList()
+    PartsCardList(selection: .constant(nil))
 }

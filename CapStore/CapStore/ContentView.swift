@@ -11,25 +11,7 @@ import Domains
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            HStack{
-                VStack{
-                    Image(systemName: "globe")
-                        .imageScale(.large)
-                        .foregroundStyle(.tint)
-                    Text("Hello, world!")
-                }
-                VStack{
-                    List(){
-                        ForEach(PartsCardModel.SAMPLE){ sample in
-                            PartsCard(model: sample)
-                        }
-                    }
-                }
-            }
-            
-        }
-        .padding()
+        PartsHomePage()
     }
 }
 

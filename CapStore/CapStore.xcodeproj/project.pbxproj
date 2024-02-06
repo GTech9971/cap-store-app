@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E15742C2B71C4DE00047ED4 /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E15742B2B71C4DE00047ED4 /* CategoryList.swift */; };
+		5E1574302B71C60A00047ED4 /* PartsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E15742F2B71C60A00047ED4 /* PartsHeader.swift */; };
+		5E1574322B71C61A00047ED4 /* PartsImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1574312B71C61A00047ED4 /* PartsImage.swift */; };
+		5E1574342B71CDA100047ED4 /* PartsContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1574332B71CDA100047ED4 /* PartsContent.swift */; };
+		5E1574362B71D8B500047ED4 /* PartsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1574352B71D8B500047ED4 /* PartsContentView.swift */; };
 		5E1A460C2B60EBCF00C72265 /* CapStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A460B2B60EBCF00C72265 /* CapStoreApp.swift */; };
 		5E1A460E2B60EBCF00C72265 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A460D2B60EBCF00C72265 /* ContentView.swift */; };
 		5E1A46102B60EBD000C72265 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E1A460F2B60EBD000C72265 /* Assets.xcassets */; };
@@ -83,6 +88,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5E15742B2B71C4DE00047ED4 /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
+		5E15742F2B71C60A00047ED4 /* PartsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsHeader.swift; sourceTree = "<group>"; };
+		5E1574312B71C61A00047ED4 /* PartsImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsImage.swift; sourceTree = "<group>"; };
+		5E1574332B71CDA100047ED4 /* PartsContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsContent.swift; sourceTree = "<group>"; };
+		5E1574352B71D8B500047ED4 /* PartsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsContentView.swift; sourceTree = "<group>"; };
 		5E1A46082B60EBCF00C72265 /* CapStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CapStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E1A460B2B60EBCF00C72265 /* CapStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapStoreApp.swift; sourceTree = "<group>"; };
 		5E1A460D2B60EBCF00C72265 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -231,6 +241,7 @@
 				5ED99A662B701E9F006707CF /* PartsCard.swift */,
 				5ED99A6B2B702B5C006707CF /* PartsCardList.swift */,
 				5ED99A712B703851006707CF /* CategoryLinkItem.swift */,
+				5E1574312B71C61A00047ED4 /* PartsImage.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -247,6 +258,10 @@
 		5ED99A6D2B703774006707CF /* Layouts */ = {
 			isa = PBXGroup;
 			children = (
+				5E15742B2B71C4DE00047ED4 /* CategoryList.swift */,
+				5E15742F2B71C60A00047ED4 /* PartsHeader.swift */,
+				5E1574332B71CDA100047ED4 /* PartsContent.swift */,
+				5E1574352B71D8B500047ED4 /* PartsContentView.swift */,
 			);
 			path = Layouts;
 			sourceTree = "<group>";
@@ -415,13 +430,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				5ED99A6A2B701FAF006707CF /* PartsCardModel.swift in Sources */,
+				5E1574302B71C60A00047ED4 /* PartsHeader.swift in Sources */,
 				5ED99A702B70379A006707CF /* PartsHomePage.swift in Sources */,
 				5ED99A6C2B702B5C006707CF /* PartsCardList.swift in Sources */,
 				5E1A460E2B60EBCF00C72265 /* ContentView.swift in Sources */,
 				5E1A460C2B60EBCF00C72265 /* CapStoreApp.swift in Sources */,
+				5E1574322B71C61A00047ED4 /* PartsImage.swift in Sources */,
 				5ED99A672B701E9F006707CF /* PartsCard.swift in Sources */,
 				5ED99A722B703851006707CF /* CategoryLinkItem.swift in Sources */,
 				5ED99A742B703863006707CF /* CategoryLinkModel.swift in Sources */,
+				5E1574342B71CDA100047ED4 /* PartsContent.swift in Sources */,
+				5E15742C2B71C4DE00047ED4 /* CategoryList.swift in Sources */,
+				5E1574362B71D8B500047ED4 /* PartsContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
