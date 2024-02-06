@@ -16,6 +16,9 @@ struct PartsCardList: View {
         List(selection : $selection){
             ForEach(partsCardViewModel.models){ model in
                 PartsCard(model: model)
+                    .onAppear(){
+                        self.partsCardViewModel.fetchNext()
+                    }
             }
         }
     }

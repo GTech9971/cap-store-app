@@ -16,12 +16,12 @@ class ComponentFetcher{
         self.capStoreClient = CapStoreClient(httpClient: URLSession.shared)
     }
     
-    func fetch(completion: @escaping ([Component]) -> Void) throws{
-        let request = try FetchComponentAPIRequest(pageIndex: 0, pageSize: 10)
+    func fetch(pageIndex:Int = 0, pageSize : Int = 10,  completion: @escaping (BasePageResponse<Component>) -> Void) throws{
+        let request = try FetchComponentAPIRequest(pageIndex: pageIndex, pageSize: pageSize)
         capStoreClient.send(request: request) { result in
             switch result{
             case .success(let response):
-                completion(response.data.map{$0!})
+                completion(response)
             case .failure(let error):
                 print(error)
             default:
