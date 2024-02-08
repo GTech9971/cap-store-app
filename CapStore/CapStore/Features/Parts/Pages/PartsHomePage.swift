@@ -12,7 +12,8 @@ struct PartsHomePage: View {
     @State private var selectCardId : UUID?;
     @State private var searchText : String = "";
     
-    @ObservedObject var partsCardViewModel = PartsCardViewModel()
+    @StateObject private var partsCardViewModel: PartsCardViewModel =
+        .init(dataSource: ComponentFetcher())
     
     var body: some View {
         NavigationSplitView{
@@ -20,20 +21,44 @@ struct PartsHomePage: View {
                 .navigationSplitViewColumnWidth(180)
         }
     content:{
-        PartsCardList(selection: $selectCardId, models:$partsCardViewModel.models)
-            .navigationSplitViewColumnWidth(ideal:120)
-            .onAppear{
-                self.partsCardViewModel.fetchNext()
+        PartsCardList(selection: $selectCardId, models: self.partsCardViewModel.models)
+            .onScrollEnd{ model in
+                //最後の要素が表示された際の処理
+                print("last:\(model.name)")
+            }.task {
+                //.taskは非同期での処理
+                do{
+                    try await self.partsCardViewModel.fetchPartsCard()
+                }catch(let error){
+                    print(error)
+                }
             }
+            .navigationSplitViewColumnWidth(ideal:120)
     }
     detail: {
         PartsContentView()
     }
     .navigationTitle("電子部品マスター")
+    .task {
+        //.taskという形式で書かないとエラー
+        //SwiftUIではViewが表示されるタイミングで１度だけ呼ばれるコールバックメソッドとして.onAppear、 .task があります。
+        //https://zenn.dev/tomo_devl/articles/65f1d1fd518bf5
+        do{
+            try await self.partsCardViewModel.fetchPartsCard()
+        }catch(let error){
+            print(error)
+        }
+    }
     .toolbar(content: {
         ToolbarItem(id:"new", placement: .navigation){
             Button(action:{
-                print(self.$selectCardId);
+                guard let select = self.$selectCardId.wrappedValue else{
+                    return
+                }
+                
+                let found : PartsCardModel? = self.partsCardViewModel.getByUUID(uuid: select)
+                
+                print(found ?? "Not Found");
             }, label:{
                 Label("new", systemImage: "square.and.pencil")
             })
@@ -50,7 +75,7 @@ struct PartsHomePage: View {
         }
     })
     .searchable(text: $searchText)
-        
+        //TODO
     }
 }
 

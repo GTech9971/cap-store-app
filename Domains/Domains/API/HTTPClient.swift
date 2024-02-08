@@ -10,12 +10,14 @@ import Foundation
 public protocol HTTPClient{
     func sendRequest(_ urlRequest: URLRequest,
                      completion: @escaping (Result<(Data, HTTPURLResponse), Error>) -> Void)
+    
+    func sendRequestAsync(_ urlRequest: URLRequest) async throws -> (Data, HTTPURLResponse)
 }
 
 extension URLSession : HTTPClient{
     
     public func sendRequest(_ urlRequest: URLRequest, completion: @escaping (Result<(Data, HTTPURLResponse), Error>) -> Void) {
-        print(urlRequest.url)
+        print(urlRequest.url ?? "")
         let task = dataTask(with: urlRequest){ data, urlResponse, error in
             switch(data, urlResponse, error){
             case (_,_,let error?):
@@ -28,5 +30,18 @@ extension URLSession : HTTPClient{
         }
         
         task.resume()
+    }
+    
+    
+    public func sendRequestAsync(_ urlRequest: URLRequest) async throws -> (Data, HTTPURLResponse) {
+        print(urlRequest.url ?? "")
+        
+        let (data,urlResponse) = try await URLSession.shared.data(for: urlRequest)
+        
+        guard let httpResponse = urlResponse as? HTTPURLResponse else {
+            fatalError("Invalid response: \(String(describing: urlResponse))")
+        }
+        
+        return (data, httpResponse)
     }
 }

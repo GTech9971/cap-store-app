@@ -21,7 +21,7 @@ public class CapStoreClient {
             let urlRequest = request.buildURLRequest()
             httpClient.sendRequest(urlRequest) { result in
                 switch result{
-                case .success(let data, let urlResponse):
+                case .success((let data, let urlResponse)):
                     do{
                         let response = try request.response(from: data, urlResponse: urlResponse)
                         print(response)
@@ -35,9 +35,16 @@ public class CapStoreClient {
                         print(error)
                         completion(Result.failure(errorData))
                     }
-                case .failure(let error):
+                case .failure(_):
                     completion(.failure(errorData))
                 }
             }
         }
+    
+    
+    public func sendAsync<Request: APIRequest>(request: Request) async throws -> Request.Response{
+        let urlRequest = request.buildURLRequest()
+        let (data, urlResponse) : (Data, HTTPURLResponse) = try await httpClient.sendRequestAsync(urlRequest)
+        return try request.response(from:data, urlResponse: urlResponse)
+    }
 }
