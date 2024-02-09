@@ -10,7 +10,8 @@ import Foundation
 public extension APIRequest{
     
     var baseURL : URL{
-        return URL(string: "http://localhost:5156/api/v1/")!
+        //return URL(string: "http://localhost:5156/api/v1/")!
+        return URL(string: "http://192.168.10.13:5156/api/v1/")!
     }
     
     func buildURLRequest() -> URLRequest{

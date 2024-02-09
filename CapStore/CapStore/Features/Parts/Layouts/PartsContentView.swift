@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct PartsContentView: View {
+    
+    public let headerModel : PartsHeaderModel?
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 0){
             Section{
                 PartsContent()
             }header: {
-                PartsHeader()
+                PartsHeader(model: self.headerModel)
                     .frame(maxHeight:160)
                 Divider()
             }
@@ -24,5 +27,5 @@ struct PartsContentView: View {
 }
 
 #Preview {
-    PartsContentView()
+    PartsContentView(headerModel: PartsHeaderModel.SAMPLE)
 }

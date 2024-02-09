@@ -16,6 +16,8 @@ class PartsCardViewModel : ObservableObject{
     
     private var hasNextPage : Bool? = true
     
+    private var response : BasePageResponse<Component>? = nil
+    
     @Published private(set) var models : [PartsCardModel] = [];
     private let dataSource: ComponentFetcher
     
@@ -30,7 +32,7 @@ class PartsCardViewModel : ObservableObject{
         
         self.pageSize += INCREASE;
         let response :BasePageResponse<Component> = try await self.dataSource.fetchAsync(pageIndex: self.pageIndex, pageSize: self.pageSize)
-        
+        self.response = response;
         self.hasNextPage = response.hasNextPage
         
         self.models = response
@@ -50,5 +52,37 @@ class PartsCardViewModel : ObservableObject{
         return self.models
             .filter{$0.id == uuid}
             .first
+    }
+    
+    func getByUUID(uuid:UUID?) -> PartsHeaderModel?{
+        guard let uuid = uuid else{
+            return nil
+        }
+        
+        guard let response = self.response else{
+            return nil;
+        }
+        
+        guard let found : PartsCardModel = self.getByUUID(uuid: uuid) else{
+            return nil;
+        }
+        
+        let component : Component?? = response.data
+            .filter({$0 != nil})
+            .filter({ data in
+                guard let data = data else{
+                    fatalError()
+                }
+                return data.componentId == found.componentId
+            }).first
+        
+        guard let component:Component? = component else{
+            return nil
+        }
+        guard let component : Component = component else{
+            return nil
+        }
+        
+        return PartsHeaderModel(component: component)
     }
 }

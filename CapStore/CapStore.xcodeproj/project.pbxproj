@@ -25,6 +25,8 @@
 		5E7CC85D2B72071500CD5D5D /* ComponentFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7CC85C2B72071500CD5D5D /* ComponentFetcher.swift */; };
 		5EA85BC42B6E46070003A35A /* Domains.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1A46602B60EBFD00C72265 /* Domains.framework */; };
 		5EA85BC52B6E46070003A35A /* Domains.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1A46602B60EBFD00C72265 /* Domains.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5EAAE0AF2B76699300E7F8DF /* PartsImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAAE0AE2B76699300E7F8DF /* PartsImageModel.swift */; };
+		5EAAE0B12B766F4300E7F8DF /* PartsHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAAE0B02B766F4300E7F8DF /* PartsHeaderModel.swift */; };
 		5ED99A672B701E9F006707CF /* PartsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED99A662B701E9F006707CF /* PartsCard.swift */; };
 		5ED99A6A2B701FAF006707CF /* PartsCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED99A692B701FAF006707CF /* PartsCardModel.swift */; };
 		5ED99A6C2B702B5C006707CF /* PartsCardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED99A6B2B702B5C006707CF /* PartsCardList.swift */; };
@@ -109,6 +111,8 @@
 		5E1A465A2B60EBFC00C72265 /* Domains.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Domains.xcodeproj; path = ../Domains/Domains.xcodeproj; sourceTree = "<group>"; };
 		5E7CC8592B7206AD00CD5D5D /* PartsCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsCardViewModel.swift; sourceTree = "<group>"; };
 		5E7CC85C2B72071500CD5D5D /* ComponentFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentFetcher.swift; sourceTree = "<group>"; };
+		5EAAE0AE2B76699300E7F8DF /* PartsImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsImageModel.swift; sourceTree = "<group>"; };
+		5EAAE0B02B766F4300E7F8DF /* PartsHeaderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsHeaderModel.swift; sourceTree = "<group>"; };
 		5ED99A662B701E9F006707CF /* PartsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsCard.swift; sourceTree = "<group>"; };
 		5ED99A692B701FAF006707CF /* PartsCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsCardModel.swift; sourceTree = "<group>"; };
 		5ED99A6B2B702B5C006707CF /* PartsCardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsCardList.swift; sourceTree = "<group>"; };
@@ -273,6 +277,8 @@
 			children = (
 				5ED99A692B701FAF006707CF /* PartsCardModel.swift */,
 				5ED99A732B703863006707CF /* CategoryLinkModel.swift */,
+				5EAAE0AE2B76699300E7F8DF /* PartsImageModel.swift */,
+				5EAAE0B02B766F4300E7F8DF /* PartsHeaderModel.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -455,6 +461,8 @@
 				5E1574302B71C60A00047ED4 /* PartsHeader.swift in Sources */,
 				5ED99A702B70379A006707CF /* PartsHomePage.swift in Sources */,
 				5ED99A6C2B702B5C006707CF /* PartsCardList.swift in Sources */,
+				5EAAE0B12B766F4300E7F8DF /* PartsHeaderModel.swift in Sources */,
+				5EAAE0AF2B76699300E7F8DF /* PartsImageModel.swift in Sources */,
 				5E1A460E2B60EBCF00C72265 /* ContentView.swift in Sources */,
 				5E1A460C2B60EBCF00C72265 /* CapStoreApp.swift in Sources */,
 				5E1574322B71C61A00047ED4 /* PartsImage.swift in Sources */,
@@ -630,7 +638,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CapStore/Preview Content\"";
-				DEVELOPMENT_TEAM = 7R4Y9AC5RD;
+				DEVELOPMENT_TEAM = K76HM8C645;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -657,7 +665,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CapStore/Preview Content\"";
-				DEVELOPMENT_TEAM = 7R4Y9AC5RD;
+				DEVELOPMENT_TEAM = K76HM8C645;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

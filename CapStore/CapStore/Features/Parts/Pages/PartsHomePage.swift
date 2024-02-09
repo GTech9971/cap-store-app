@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Domains
 
 
 struct PartsHomePage: View {
@@ -36,7 +37,7 @@ struct PartsHomePage: View {
             .navigationSplitViewColumnWidth(ideal:120)
     }
     detail: {
-        PartsContentView()
+        PartsContentView(headerModel: self.partsCardViewModel.getByUUID(uuid: self.$selectCardId.wrappedValue))
     }
     .navigationTitle("電子部品マスター")
     .task {
