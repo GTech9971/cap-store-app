@@ -8,6 +8,7 @@
 import Foundation
 import Domains
 
+
 class PartsCardViewModel : ObservableObject{
     private let INCREASE : Int = 10
     
@@ -19,12 +20,15 @@ class PartsCardViewModel : ObservableObject{
     private var response : BasePageResponse<Component>? = nil
     
     @Published private(set) var models : [PartsCardModel] = [];
+    
     private let dataSource: ComponentFetcher
     
     init(dataSource: ComponentFetcher) {
         self.dataSource = dataSource
     }
     
+    
+    /// 電子部品情報を取得する
     func fetchPartsCard() async throws{
         if(self.hasNextPage == false){
             return;
@@ -37,24 +41,39 @@ class PartsCardViewModel : ObservableObject{
         
         self.models = response
             .data
-            .filter{$0 != nil}
+            .compactMap({$0})
             .map{ data in
-                guard let data = data else{
-                    fatalError()
-                }
                 return PartsCardModel(
                     componentId: data.componentId, name:data.name, modelName: data.modelName, makerName: data.maker.name
                 )
             }
     }
     
+    /// 選択中の電子部品カードモデルを取得する
+    /// - Parameter uuid: 選択中のUUID
+    /// - Returns:電子部品カードモデル
     func getByUUID(uuid:UUID) -> PartsCardModel?{
         return self.models
             .filter{$0.id == uuid}
             .first
     }
     
-    func getByUUID(uuid:UUID?) -> PartsHeaderModel?{
+    
+    /// 選択中の電子部品IDを取得する
+    /// - Parameter uuid: 選択中のUUID
+    /// - Returns: 電子部品ID
+    func getComponentIdByUUID(uuid:UUID) -> Int?{
+        return self.models
+            .filter({$0.id == uuid})
+            .map({$0.componentId})
+            .first
+    }
+    
+    
+    /// 選択中の電子部品コンテントモデルを取得する
+    /// - Parameter uuid: 選択中のUUID
+    /// - Returns: 電子部品コンテントモデル
+    func getByUUID(uuid:UUID?) -> PartsContentModel?{
         guard let uuid = uuid else{
             return nil
         }
@@ -63,26 +82,21 @@ class PartsCardViewModel : ObservableObject{
             return nil;
         }
         
-        guard let found : PartsCardModel = self.getByUUID(uuid: uuid) else{
+        guard let id : Int = self.getComponentIdByUUID(uuid: uuid) else{
             return nil;
         }
         
-        let component : Component?? = response.data
-            .filter({$0 != nil})
+        let component : Component? = response.data
+            .compactMap({$0})
             .filter({ data in
-                guard let data = data else{
-                    fatalError()
-                }
-                return data.componentId == found.componentId
-            }).first
+                return data.componentId == id
+            })
+            .first
         
-        guard let component:Component? = component else{
-            return nil
-        }
         guard let component : Component = component else{
             return nil
         }
         
-        return PartsHeaderModel(component: component)
+        return PartsContentModel(component: component)
     }
 }

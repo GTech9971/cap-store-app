@@ -11,10 +11,13 @@ struct PartsImageModel{
     public let images : [String];
     
     
-    init(images: [String]) {
+    init?(images: [String]) {
+        if images.first == nil{
+            return nil
+        }
         self.images = images
     }
     
 
-    public static let SAMPLE : PartsImageModel = PartsImageModel(images: ["pic16f18444", "pic16f18444-1", "pic16f18444-2"])
+    public static let SAMPLE : PartsImageModel = PartsImageModel(images: ["pic16f18444", "pic16f18444-1", "pic16f18444-2"])!
 }

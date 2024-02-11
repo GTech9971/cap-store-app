@@ -9,23 +9,30 @@ import SwiftUI
 
 struct PartsContentView: View {
     
-    public let headerModel : PartsHeaderModel?
+    public let model:PartsContentModel?
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 0){
-            Section{
-                PartsContent()
-            }header: {
-                PartsHeader(model: self.headerModel)
-                    .frame(maxHeight:160)
-                Divider()
+        if let model = self.model{
+            VStack(alignment: .leading){
+                Section{
+                    PartsContent(model:model)
+                }header: {
+                    PartsHeader(model: model.headerModel)
+                        .frame(maxHeight:160)
+                    Divider()
+                        .padding()
+                }
             }
-            
+            .padding()
+        }else{
+            VStack(alignment:.center){
+                Text("電子部品未選択")
+            }
+            .padding()
         }
-        .padding()
     }
 }
 
 #Preview {
-    PartsContentView(headerModel: PartsHeaderModel.SAMPLE)
+    PartsContentView(model: PartsContentModel.SAMPLE)
 }

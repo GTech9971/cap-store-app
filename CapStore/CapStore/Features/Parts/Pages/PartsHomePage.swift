@@ -25,7 +25,6 @@ struct PartsHomePage: View {
         PartsCardList(selection: $selectCardId, models: self.partsCardViewModel.models)
             .onScrollEnd{ model in
                 //最後の要素が表示された際の処理
-                print("last:\(model.name)")
             }.task {
                 //.taskは非同期での処理
                 do{
@@ -34,10 +33,11 @@ struct PartsHomePage: View {
                     print(error)
                 }
             }
-            .navigationSplitViewColumnWidth(ideal:120)
+            .navigationSplitViewColumnWidth(250)
     }
     detail: {
-        PartsContentView(headerModel: self.partsCardViewModel.getByUUID(uuid: self.$selectCardId.wrappedValue))
+            PartsContentView(model: self.partsCardViewModel.getByUUID(uuid: self.$selectCardId.wrappedValue))
+        Spacer()
     }
     .navigationTitle("電子部品マスター")
     .task {
@@ -50,6 +50,7 @@ struct PartsHomePage: View {
             print(error)
         }
     }
+    .frame(minWidth: 1000, idealWidth: 1200, minHeight: 500, idealHeight: 600)
     .toolbar(content: {
         ToolbarItem(id:"new", placement: .navigation){
             Button(action:{

@@ -9,44 +9,29 @@ import SwiftUI
 
 struct PartsHeader: View {
     
-    public let model:PartsHeaderModel?;
+    public let model:PartsHeaderModels;
     
-    init(model: PartsHeaderModel?) {
+    init(model: PartsHeaderModels) {
         self.model = model
     }
     
     var body: some View {
-        if let model = self.model {
-            HStack{
-                VStack{
-                    PartsImage(model: model.imageModel)
-                    Spacer()
-                }
+        HStack(alignment:.top){
+            PartsImage(model: model.imageModel)
+            HStack(alignment:.firstTextBaseline){
+                PartsCard(model: model.partsCardModel)
                 Spacer()
-                HStack{
-                    VStack{
-                        PartsCard(model: model.partsCardModel)
-                        Spacer()
-                    }
-                    Spacer()
-                    VStack{
-                        HStack{
-                            Image(systemName: model.category.image ?? "globe")
-                                .foregroundColor(Color.blue)
-                            Text(model.category.name)
-                        }
-                        Spacer()
-                    }
+                HStack(alignment:.firstTextBaseline){
+                    Image(systemName: model.category.image ?? "globe")
+                        .foregroundColor(Color.blue)
+                    Text(model.category.name)
                 }
             }
-            .padding()
-            .frame(maxHeight: 160)
-        }else{
-            Text("Empty")
         }
+        .padding()
     }
 }
 
 #Preview {
-    PartsHeader(model: PartsHeaderModel.SAMPLE)
+    PartsHeader(model: PartsHeaderModels.SAMPLE)
 }
