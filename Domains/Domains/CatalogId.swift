@@ -15,7 +15,7 @@ public struct CatalogId : Codable, Equatable{
     
     public let id : String;
     
-    public init(id: String) throws {
+    public init(id: String) {
 //        if(id.count != LENGTH){
 //            throw ModelError.argumentIndexOutOfRangeError(message: "IDの長さが不正です")
 //        }

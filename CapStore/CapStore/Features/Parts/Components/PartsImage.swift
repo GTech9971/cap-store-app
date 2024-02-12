@@ -9,13 +9,15 @@ import SwiftUI
 
 struct PartsImage: View {
     
-    let WIDTH : CGFloat = 150;
-    let HEIGHT : CGFloat = 150;
+    var minWidth : CGFloat = 150;
+    var minHeight : CGFloat = 150;
     
     private let model : PartsImageModel?
     
-    init(model: PartsImageModel?) {
+    init(model: PartsImageModel?, minWidth : CGFloat = 150, minHeight : CGFloat = 150) {
         self.model = model
+        self.minWidth = minWidth
+        self.minHeight = minHeight
     }
     
     var body: some View {
@@ -26,19 +28,19 @@ struct PartsImage: View {
                         image
                             .image?
                             .resizable()
-                            .frame(width:WIDTH, height: HEIGHT)
+                            .frame(width:self.minWidth, height: self.minHeight)
                     }
                 }else{
                     ProgressView()
                 }
             }
             .clipShape(RoundedRectangle(cornerRadius: 8))
-            .frame(minWidth: WIDTH * 1.1, minHeight: HEIGHT * 1.1)
+            .frame(minWidth: self.minWidth * 1.1, minHeight: self.minHeight * 1.1)
         }else{
             Text("No Image")
                 .font(Font.system(size: 24).bold())
                 .foregroundColor(Color.white)
-                .frame(minWidth: WIDTH * 1.1, minHeight: HEIGHT * 1.1)
+                .frame(minWidth: self.minWidth * 1.1, minHeight: self.minHeight * 1.1)
                 .background(.gray)
                 .clipShape(RoundedRectangle(cornerRadius: 8))
         }

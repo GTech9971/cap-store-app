@@ -14,6 +14,10 @@
 		5E1A46502B60EBFC00C72265 /* MakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A464F2B60EBFC00C72265 /* MakerTests.swift */; };
 		5E1A46512B60EBFC00C72265 /* Domains.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E1A46432B60EBFC00C72265 /* Domains.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5E1A46642B60EC1300C72265 /* Maker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A46632B60EC1300C72265 /* Maker.swift */; };
+		5E3689772B7A3D31001BF6C6 /* FetchAllCategoryAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3689762B7A3D31001BF6C6 /* FetchAllCategoryAPIRequest.swift */; };
+		5E3689792B7A3E0E001BF6C6 /* FetchAllMakerAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3689782B7A3E0E001BF6C6 /* FetchAllMakerAPIRequest.swift */; };
+		5E36897F2B7A467F001BF6C6 /* FetchAllCategoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E36897E2B7A467F001BF6C6 /* FetchAllCategoryTest.swift */; };
+		5E4BE0652B7A5138004547A3 /* FetchAllMakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4BE0642B7A5138004547A3 /* FetchAllMakerTests.swift */; };
 		5E7CC8542B72045500CD5D5D /* FetchComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7CC8532B72045500CD5D5D /* FetchComponentTests.swift */; };
 		5EBC4C422B62F4510051C272 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBC4C412B62F4510051C272 /* Category.swift */; };
 		5EBC4C442B62F4E70051C272 /* CategoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBC4C432B62F4E70051C272 /* CategoryTests.swift */; };
@@ -29,7 +33,6 @@
 		5EBC4C5C2B63063A0051C272 /* CapStoreAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBC4C5B2B63063A0051C272 /* CapStoreAPIRequest.swift */; };
 		5EBCB21F2B6591D8001655DD /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBCB21E2B6591D8001655DD /* HTTPClient.swift */; };
 		5EBCB2232B6595AD001655DD /* CapStoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBCB2222B6595AD001655DD /* CapStoreClient.swift */; };
-		5EBCB2252B659F30001655DD /* CapStoreClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBCB2242B659F30001655DD /* CapStoreClientTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,10 @@
 		5E1A464A2B60EBFC00C72265 /* DomainsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DomainsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E1A464F2B60EBFC00C72265 /* MakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakerTests.swift; sourceTree = "<group>"; };
 		5E1A46632B60EC1300C72265 /* Maker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maker.swift; sourceTree = "<group>"; };
+		5E3689762B7A3D31001BF6C6 /* FetchAllCategoryAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAllCategoryAPIRequest.swift; sourceTree = "<group>"; };
+		5E3689782B7A3E0E001BF6C6 /* FetchAllMakerAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAllMakerAPIRequest.swift; sourceTree = "<group>"; };
+		5E36897E2B7A467F001BF6C6 /* FetchAllCategoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAllCategoryTest.swift; sourceTree = "<group>"; };
+		5E4BE0642B7A5138004547A3 /* FetchAllMakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAllMakerTests.swift; sourceTree = "<group>"; };
 		5E7CC8532B72045500CD5D5D /* FetchComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchComponentTests.swift; sourceTree = "<group>"; };
 		5EBC4C412B62F4510051C272 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		5EBC4C432B62F4E70051C272 /* CategoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTests.swift; sourceTree = "<group>"; };
@@ -66,7 +73,6 @@
 		5EBC4C5B2B63063A0051C272 /* CapStoreAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapStoreAPIRequest.swift; sourceTree = "<group>"; };
 		5EBCB21E2B6591D8001655DD /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		5EBCB2222B6595AD001655DD /* CapStoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapStoreClient.swift; sourceTree = "<group>"; };
-		5EBCB2242B659F30001655DD /* CapStoreClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapStoreClientTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,8 +133,9 @@
 				5E1A464F2B60EBFC00C72265 /* MakerTests.swift */,
 				5EBC4C432B62F4E70051C272 /* CategoryTests.swift */,
 				5EBC4C472B62F6920051C272 /* ComponentTests.swift */,
-				5EBCB2242B659F30001655DD /* CapStoreClientTests.swift */,
 				5E7CC8532B72045500CD5D5D /* FetchComponentTests.swift */,
+				5E36897E2B7A467F001BF6C6 /* FetchAllCategoryTest.swift */,
+				5E4BE0642B7A5138004547A3 /* FetchAllMakerTests.swift */,
 			);
 			path = DomainsTests;
 			sourceTree = "<group>";
@@ -154,6 +161,8 @@
 				5EBC4C5B2B63063A0051C272 /* CapStoreAPIRequest.swift */,
 				5EBCB2222B6595AD001655DD /* CapStoreClient.swift */,
 				5E1574372B72012000047ED4 /* FetchComponentAPIRequest.swift */,
+				5E3689762B7A3D31001BF6C6 /* FetchAllCategoryAPIRequest.swift */,
+				5E3689782B7A3E0E001BF6C6 /* FetchAllMakerAPIRequest.swift */,
 			);
 			path = CapStoreAPI;
 			sourceTree = "<group>";
@@ -271,11 +280,13 @@
 				5EBC4C522B6301010051C272 /* APIRequest.swift in Sources */,
 				5EBCB21F2B6591D8001655DD /* HTTPClient.swift in Sources */,
 				5EBC4C462B62F5BA0051C272 /* Component.swift in Sources */,
+				5E3689772B7A3D31001BF6C6 /* FetchAllCategoryAPIRequest.swift in Sources */,
 				5EBC4C4C2B62FBE30051C272 /* ModelError.swift in Sources */,
 				5E1A46452B60EBFC00C72265 /* Domains.docc in Sources */,
 				5EBC4C4E2B62FF340051C272 /* BaseResponse.swift in Sources */,
 				5EBC4C5C2B63063A0051C272 /* CapStoreAPIRequest.swift in Sources */,
 				5EBC4C4A2B62FACD0051C272 /* CatalogId.swift in Sources */,
+				5E3689792B7A3E0E001BF6C6 /* FetchAllMakerAPIRequest.swift in Sources */,
 				5E1574382B72012000047ED4 /* FetchComponentAPIRequest.swift in Sources */,
 				5EBCB2232B6595AD001655DD /* CapStoreClient.swift in Sources */,
 				5EBC4C422B62F4510051C272 /* Category.swift in Sources */,
@@ -292,9 +303,10 @@
 			files = (
 				5EBC4C482B62F6920051C272 /* ComponentTests.swift in Sources */,
 				5E1A46502B60EBFC00C72265 /* MakerTests.swift in Sources */,
+				5E36897F2B7A467F001BF6C6 /* FetchAllCategoryTest.swift in Sources */,
 				5EBC4C442B62F4E70051C272 /* CategoryTests.swift in Sources */,
 				5E7CC8542B72045500CD5D5D /* FetchComponentTests.swift in Sources */,
-				5EBCB2252B659F30001655DD /* CapStoreClientTests.swift in Sources */,
+				5E4BE0652B7A5138004547A3 /* FetchAllMakerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

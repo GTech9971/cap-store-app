@@ -9,10 +9,10 @@ import Foundation
 
 public struct BaseResponse<T:Codable> : Codable{
     public let success: Bool;
-    public let data:[T?];
+    public let data:[T]?;
     public let errors:[ErrorData]?;
     
-    public init(success: Bool, data: [T], errors: [ErrorData]?) {
+    public init(success: Bool, data: [T]?, errors: [ErrorData]?) {
         self.success = success
         self.data = data
         self.errors = errors

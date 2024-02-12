@@ -8,13 +8,14 @@
 import Foundation
 
 ///メーカー
-public struct Maker : Codable , Equatable{
-    public let id: Int;
+public struct Maker : Codable, Equatable, Identifiable, Hashable{
+    public var id : UUID = UUID();
+    public let makerId: Int;
     public let name : String;
     public let image : String?;
     
-    public init(id: Int, name: String, image: String?) {
-        self.id = id
+    public init(makerId: Int, name: String, image: String?) {
+        self.makerId = makerId
         self.name = name
         self.image = image
     }
@@ -23,4 +24,14 @@ public struct Maker : Codable , Equatable{
         let data = try! JSONEncoder().encode(self);
         return String(data: data, encoding: .utf8)!;
     }
+    
+    public enum CodingKeys : String, CodingKey{
+        case makerId
+        case name
+        case image
+    }
+    
+    public static let SAMPLES : [Maker] = [
+        Maker(makerId:0, name: "Microchip Technology", image: nil)
+    ]
 }

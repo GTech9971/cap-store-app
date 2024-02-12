@@ -37,12 +37,12 @@ public struct Component : Codable, Equatable {
                                                       name: "PIC16F18444", modelName: "PIC16F18444-I/P",
                                                       description: DESCRIPTION_SAMPLE,
                                                       category: Category(
-                                                        id:0,
+                                                        categoryId:0,
                                                         name: "マイコン",
                                                         image: "globe"
                                                       ),
                                                       maker: Maker(
-                                                        id: 0,
+                                                        makerId: 0,
                                                         name:"Microchip Technology",
                                                         image: nil
                                                       ),

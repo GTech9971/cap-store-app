@@ -39,14 +39,15 @@ class PartsCardViewModel : ObservableObject{
         self.response = response;
         self.hasNextPage = response.hasNextPage
         
-        self.models = response
-            .data
-            .compactMap({$0})
-            .map{ data in
-                return PartsCardModel(
-                    componentId: data.componentId, name:data.name, modelName: data.modelName, makerName: data.maker.name
-                )
-            }
+        if let data = response.data{
+            self.models = data
+                .compactMap({$0})
+                .map{ data in
+                    return PartsCardModel(
+                        componentId: data.componentId, name:data.name, modelName: data.modelName, makerName: data.maker.name
+                    )
+                }
+        }
     }
     
     /// 選択中の電子部品カードモデルを取得する
@@ -86,7 +87,11 @@ class PartsCardViewModel : ObservableObject{
             return nil;
         }
         
-        let component : Component? = response.data
+        guard let data = response.data else{
+            return nil;
+        }
+        
+        let component : Component? = data
             .compactMap({$0})
             .filter({ data in
                 return data.componentId == id

@@ -60,6 +60,7 @@ struct PartsHomePage: View {
                 
                 let found : PartsCardModel? = self.partsCardViewModel.getByUUID(uuid: select)
                 
+                
                 print(found ?? "Not Found");
             }, label:{
                 Label("new", systemImage: "square.and.pencil")

@@ -19,10 +19,10 @@ public struct BasePageResponse<T:Codable> : Codable{
     public let hasNextPage : Bool;
     
     public let success: Bool;
-    public let data:[T?];
+    public let data:[T]?;
     public let errors:[ErrorData]?;
     
-    public init(pageIndex: Int, pageSize: Int, totalCount: Int, totalPages: Int, hasPreviousPage: Bool, hasNextPage: Bool, success: Bool, data: [T], errors: [ErrorData]?) {
+    public init(pageIndex: Int, pageSize: Int, totalCount: Int, totalPages: Int, hasPreviousPage: Bool, hasNextPage: Bool, success: Bool, data: [T]?, errors: [ErrorData]?) {
         self.pageIndex = pageIndex
         self.pageSize = pageSize
         self.totalCount = totalCount

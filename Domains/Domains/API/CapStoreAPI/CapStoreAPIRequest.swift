@@ -22,7 +22,9 @@ public extension APIRequest{
         
         switch method {
         case .get:
-            components?.queryItems = queryItems
+            if self.queryItems.first != nil{
+                components?.queryItems = queryItems
+            }
         default:
             fatalError()
         }
@@ -43,7 +45,7 @@ public extension APIRequest{
             return try decoder.decode(Response.self, from: data)
         }else{
             //TODO
-            throw try decoder.decode(ErrorData.self, from: data)
+            return try decoder.decode(Response.self, from: data)
         }
     }
 }
