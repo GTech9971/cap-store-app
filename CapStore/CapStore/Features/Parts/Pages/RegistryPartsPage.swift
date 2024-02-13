@@ -9,8 +9,11 @@ import SwiftUI
 import Domains
 
 struct RegistryPartsPage: View {
+    @Environment(\.dismissWindow) private var dismissWindow
     
     @StateObject private var registryViewModel : RegistryPartsViewModel = .init(dataSourceCategory: CategoryFetcher(), dateSourceMaker: MakerFetcher(), dataSourceComponent: ComponentFetcher())
+    
+    private let componentRegister:ComponentRegister = ComponentRegister()
     
     @State var catalogId : String = "";
     
@@ -21,8 +24,12 @@ struct RegistryPartsPage: View {
     @State var description : String = "";
     @State var image:PartsImageModel? = nil;
     
+    //成功系
+    @State private var isShowRegistrySuccessAlert: Bool = false
+    //エラー系
     @State private var isShowNotFoundAlert : Bool = false
     @State private var isShowFetchErrorAlert : Bool = false
+    @State private var isShowRegistryErrorAlert : Bool = false
     
     @State private var error: Error? = nil
     
@@ -36,8 +43,11 @@ struct RegistryPartsPage: View {
         }
     }
     
-    private func fetchComponentByCatalogId(catalogId:CatalogId) async{
+    
+    /// カタログIDをもとに電子部品を検索
+    private func fetchComponentByCatalogId() async{
         do{
+            let catalogId:CatalogId = CatalogId(id: self.catalogId)
             try await self.registryViewModel.fetchComponentAsync(catalogId: catalogId)
             guard let component = self.registryViewModel.component else{
                 self.isShowNotFoundAlert = true;
@@ -60,11 +70,38 @@ struct RegistryPartsPage: View {
     }
     
     
+    /// 入力された内容で電子部品を登録する
+    private func registryComponentAsync() async{
+        guard let categoryId : Int = self.selectedCategory?.categoryId else{
+            return;
+        }
+        
+        guard let makerId : Int = self.selectedMaker?.makerId else{
+            return;
+        }
+        
+        let data: RegistryComponentData = RegistryComponentData(
+            name: self.name,
+            modelName: self.modelName,
+            description: self.description,
+            categoryId: categoryId,
+            makerId: makerId,
+            images: self.image?.images)
+        
+        do{
+            let _ = try await self.componentRegister.registryAsync(data: data)
+            self.isShowRegistrySuccessAlert = true;
+        }catch(let error){
+            self.error = error
+            self.isShowRegistryErrorAlert = true
+        }
+    }
+    
+    
     private var searchButton : some View{
         Button("検索"){
             Task{
-                let catalogId = CatalogId(id: self.catalogId)
-                await fetchComponentByCatalogId(catalogId:catalogId)
+                await fetchComponentByCatalogId()
             }
         }
         .alert("NotFound", isPresented: self.$isShowNotFoundAlert){
@@ -79,6 +116,19 @@ struct RegistryPartsPage: View {
                 return Text("")
             }
             return Text(error.localizedDescription)
+        }
+        .alert("登録エラー", isPresented: self.$isShowRegistryErrorAlert){
+            
+        }message: {
+            guard let error = self.error else{
+                return Text("電子部品の登録に失敗しました。")
+            }
+            return Text("電子部品の登録に失敗しました。\(error.localizedDescription)")
+        }
+        .alert("登録成功", isPresented: self.$isShowRegistrySuccessAlert){
+            
+        }message: {
+            Text("電子部品登録に成功しました")
         }
     }
     
@@ -126,10 +176,12 @@ struct RegistryPartsPage: View {
             HStack{
                 Spacer()
                 Button("キャンセル"){
-                    
+                    dismissWindow(id:"registry")
                 }
                 Button("保存"){
-                    
+                    Task{
+                        await registryComponentAsync()
+                    }
                 }
                 
             }

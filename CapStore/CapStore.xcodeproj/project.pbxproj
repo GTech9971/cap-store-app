@@ -38,6 +38,7 @@
 		5ED99A702B70379A006707CF /* PartsHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED99A6F2B70379A006707CF /* PartsHomePage.swift */; };
 		5ED99A722B703851006707CF /* CategoryLinkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED99A712B703851006707CF /* CategoryLinkItem.swift */; };
 		5ED99A742B703863006707CF /* CategoryLinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED99A732B703863006707CF /* CategoryLinkModel.swift */; };
+		5EF53C392B7BAF6C00E417E5 /* ComponentRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF53C382B7BAF6C00E417E5 /* ComponentRegister.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,7 @@
 		5ED99A6F2B70379A006707CF /* PartsHomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsHomePage.swift; sourceTree = "<group>"; };
 		5ED99A712B703851006707CF /* CategoryLinkItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryLinkItem.swift; sourceTree = "<group>"; };
 		5ED99A732B703863006707CF /* CategoryLinkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryLinkModel.swift; sourceTree = "<group>"; };
+		5EF53C382B7BAF6C00E417E5 /* ComponentRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentRegister.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +253,7 @@
 				5E7CC85C2B72071500CD5D5D /* ComponentFetcher.swift */,
 				5E3689742B7A3CA1001BF6C6 /* CategoryFetcher.swift */,
 				5E36897A2B7A3E48001BF6C6 /* MakerFetcher.swift */,
+				5EF53C382B7BAF6C00E417E5 /* ComponentRegister.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 				5E15742C2B71C4DE00047ED4 /* CategoryList.swift in Sources */,
 				5EA926112B790B2700C05435 /* PartsHeaderModels.swift in Sources */,
 				5E7CC85D2B72071500CD5D5D /* ComponentFetcher.swift in Sources */,
+				5EF53C392B7BAF6C00E417E5 /* ComponentRegister.swift in Sources */,
 				5E1574362B71D8B500047ED4 /* PartsContentView.swift in Sources */,
 				5E3689752B7A3CA1001BF6C6 /* CategoryFetcher.swift in Sources */,
 			);
