@@ -9,7 +9,7 @@ import Foundation
 import Domains
 
 
-class PartsCardViewModel : ObservableObject{
+class PartsHomeViewModel : ObservableObject{
     private let INCREASE : Int = 10
     
     private var pageIndex:Int = 0;
@@ -20,11 +20,14 @@ class PartsCardViewModel : ObservableObject{
     private var response : BasePageResponse<Component>? = nil
     
     @Published private(set) var models : [PartsCardModel] = [];
+    @Published private(set) var categories:[Domains.Category] = [];
     
     private let dataSource: ComponentFetcher
+    private let dataSourceCategories: CategoryFetcher
     
-    init(dataSource: ComponentFetcher) {
-        self.dataSource = dataSource
+    init() {
+        self.dataSource = ComponentFetcher()
+        self.dataSourceCategories = CategoryFetcher()
     }
     
     
@@ -49,7 +52,13 @@ class PartsCardViewModel : ObservableObject{
                         )
                     }
             }
-            
+        }
+    }
+    
+    func fetchAllCategoriesAsync() async throws{
+        let response : BaseResponse<Domains.Category> = try await self.dataSourceCategories.fetchAllAsync()
+        if let data = response.data{
+            self.categories = data.compactMap({$0})
         }
     }
     

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Domains
 
 struct CategoryLinkItem: View {
     private let model : CategoryLinkModel
@@ -14,11 +15,15 @@ struct CategoryLinkItem: View {
         self.model = model
     }
     
+    public init(model: Domains.Category) {
+        self.model = CategoryLinkModel(name: model.name, image: model.image)
+    }
+    
     var body: some View {
         Label{
             Text(model.name)
         } icon :{
-            Image(systemName: model.image!)
+            Image(systemName: model.image ?? "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
         }

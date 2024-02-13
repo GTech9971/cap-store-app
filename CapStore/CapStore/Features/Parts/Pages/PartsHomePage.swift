@@ -15,40 +15,46 @@ struct PartsHomePage: View {
     
     @State private var selectCardId : UUID?;
     @State private var searchText : String = "";
+    @State private var selectedCategory : Domains.Category?
     
-    @StateObject private var partsCardViewModel: PartsCardViewModel =
-        .init(dataSource: ComponentFetcher())
+    @StateObject private var viewModel: PartsHomeViewModel = PartsHomeViewModel()
     
     var body: some View {
         NavigationSplitView{
-            CategoryList()
-                .navigationSplitViewColumnWidth(180)
+            CategoryList(selection: self.$selectedCategory, categories: self.viewModel.categories)
+                .navigationSplitViewColumnWidth(200)
         }
     content:{
-        PartsCardList(selection: $selectCardId, models: self.partsCardViewModel.models)
+        PartsCardList(selection: $selectCardId, models: self.viewModel.models)
             .onScrollEnd{ model in
                 //最後の要素が表示された際の処理
                 Task{
                     do{
-                        try await self.partsCardViewModel.fetchPartsCard()
+                        try await self.viewModel.fetchPartsCard()
                     }catch(let error){
                         print(error)
                     }
                 }
             }
-            .navigationSplitViewColumnWidth(250)
+            .navigationSplitViewColumnWidth(300)
     }
     detail: {
-            PartsContentView(model: self.partsCardViewModel.getByUUID(uuid: self.$selectCardId.wrappedValue))
+            PartsContentView(model: self.viewModel.getByUUID(uuid: self.$selectCardId.wrappedValue))
         Spacer()
     }
     .navigationTitle("電子部品マスター")
     .task {
-        //.taskという形式で書かないとエラー
-        //SwiftUIではViewが表示されるタイミングで１度だけ呼ばれるコールバックメソッドとして.onAppear、 .task があります。
+        //カテゴリー取得
+        do{
+            try await self.viewModel.fetchAllCategoriesAsync()
+        }catch(let error){
+            print(error)
+        }
+        
+        //電子部品取得
         //https://zenn.dev/tomo_devl/articles/65f1d1fd518bf5
         do{
-            try await self.partsCardViewModel.fetchPartsCard()
+            try await self.viewModel.fetchPartsCard()
         }catch(let error){
             print(error)
         }

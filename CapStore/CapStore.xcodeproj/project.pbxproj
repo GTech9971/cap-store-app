@@ -26,7 +26,7 @@
 		5E3689752B7A3CA1001BF6C6 /* CategoryFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3689742B7A3CA1001BF6C6 /* CategoryFetcher.swift */; };
 		5E36897B2B7A3E48001BF6C6 /* MakerFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E36897A2B7A3E48001BF6C6 /* MakerFetcher.swift */; };
 		5E36897D2B7A3EF2001BF6C6 /* RegistryPartsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E36897C2B7A3EF2001BF6C6 /* RegistryPartsViewModel.swift */; };
-		5E7CC85A2B7206AD00CD5D5D /* PartsCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7CC8592B7206AD00CD5D5D /* PartsCardViewModel.swift */; };
+		5E7CC85A2B7206AD00CD5D5D /* PartsHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7CC8592B7206AD00CD5D5D /* PartsHomeViewModel.swift */; };
 		5E7CC85D2B72071500CD5D5D /* ComponentFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7CC85C2B72071500CD5D5D /* ComponentFetcher.swift */; };
 		5EA85BC42B6E46070003A35A /* Domains.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1A46602B60EBFD00C72265 /* Domains.framework */; };
 		5EA85BC52B6E46070003A35A /* Domains.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1A46602B60EBFD00C72265 /* Domains.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -120,7 +120,7 @@
 		5E3689742B7A3CA1001BF6C6 /* CategoryFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFetcher.swift; sourceTree = "<group>"; };
 		5E36897A2B7A3E48001BF6C6 /* MakerFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakerFetcher.swift; sourceTree = "<group>"; };
 		5E36897C2B7A3EF2001BF6C6 /* RegistryPartsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistryPartsViewModel.swift; sourceTree = "<group>"; };
-		5E7CC8592B7206AD00CD5D5D /* PartsCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsCardViewModel.swift; sourceTree = "<group>"; };
+		5E7CC8592B7206AD00CD5D5D /* PartsHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsHomeViewModel.swift; sourceTree = "<group>"; };
 		5E7CC85C2B72071500CD5D5D /* ComponentFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentFetcher.swift; sourceTree = "<group>"; };
 		5EA926102B790B2700C05435 /* PartsHeaderModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsHeaderModels.swift; sourceTree = "<group>"; };
 		5EAAE0AE2B76699300E7F8DF /* PartsImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsImageModel.swift; sourceTree = "<group>"; };
@@ -241,7 +241,7 @@
 		5E7CC8562B72067600CD5D5D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5E7CC8592B7206AD00CD5D5D /* PartsCardViewModel.swift */,
+				5E7CC8592B7206AD00CD5D5D /* PartsHomeViewModel.swift */,
 				5E36897C2B7A3EF2001BF6C6 /* RegistryPartsViewModel.swift */,
 			);
 			path = Models;
@@ -503,7 +503,7 @@
 				5E1574322B71C61A00047ED4 /* PartsImage.swift in Sources */,
 				5ED99A672B701E9F006707CF /* PartsCard.swift in Sources */,
 				5ED99A722B703851006707CF /* CategoryLinkItem.swift in Sources */,
-				5E7CC85A2B7206AD00CD5D5D /* PartsCardViewModel.swift in Sources */,
+				5E7CC85A2B7206AD00CD5D5D /* PartsHomeViewModel.swift in Sources */,
 				5E36897B2B7A3E48001BF6C6 /* MakerFetcher.swift in Sources */,
 				5E36897D2B7A3EF2001BF6C6 /* RegistryPartsViewModel.swift in Sources */,
 				5ED99A742B703863006707CF /* CategoryLinkModel.swift in Sources */,
