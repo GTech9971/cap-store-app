@@ -28,12 +28,12 @@ struct PartsHomePage: View {
         PartsCardList(selection: $selectCardId, models: self.partsCardViewModel.models)
             .onScrollEnd{ model in
                 //最後の要素が表示された際の処理
-            }.task {
-                //.taskは非同期での処理
-                do{
-                    try await self.partsCardViewModel.fetchPartsCard()
-                }catch(let error){
-                    print(error)
+                Task{
+                    do{
+                        try await self.partsCardViewModel.fetchPartsCard()
+                    }catch(let error){
+                        print(error)
+                    }
                 }
             }
             .navigationSplitViewColumnWidth(250)
