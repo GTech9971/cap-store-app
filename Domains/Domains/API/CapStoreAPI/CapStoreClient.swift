@@ -15,7 +15,15 @@ public class CapStoreClient {
     
     
     public func sendAsync<Request: APIRequest>(request: Request) async throws -> Request.Response{
-        let urlRequest = request.buildURLRequest()
+        var urlRequest = request.buildURLRequest()
+        
+        if let request = request.body{
+            if let json = try? JSONEncoder().encode(request){
+                urlRequest.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+                urlRequest.httpBody = json
+            }
+        }
+        
         let (data, urlResponse) : (Data, HTTPURLResponse) = try await httpClient.sendRequestAsync(urlRequest)
         return try request.response(from:data, urlResponse: urlResponse)
     }

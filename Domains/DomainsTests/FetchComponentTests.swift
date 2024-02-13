@@ -26,6 +26,14 @@ final class FetchComponentTests: XCTestCase {
         XCTAssertEqual(true, response.success)
     }
     
+    func testFetchManyAsync() async throws {
+        let request = FetchComponentAPIRequest(pageIndex: 0, pageSize: 100)
+        let response = try await capStoreClient.sendAsync(request: request)
+        XCTAssertEqual(true, response.success)
+        XCTAssertEqual(false, response.hasNextPage)
+        XCTAssertEqual(false, response.hasPreviousPage)
+    }
+    
     func testFetchByCatalogIdAsync() async throws{
         let request = FetchCatalogAPIRequest(catalogId: CatalogId(id: "XXX"))
         let response = try await capStoreClient.sendAsync(request: request)

@@ -33,6 +33,10 @@
 		5EBC4C5C2B63063A0051C272 /* CapStoreAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBC4C5B2B63063A0051C272 /* CapStoreAPIRequest.swift */; };
 		5EBCB21F2B6591D8001655DD /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBCB21E2B6591D8001655DD /* HTTPClient.swift */; };
 		5EBCB2232B6595AD001655DD /* CapStoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBCB2222B6595AD001655DD /* CapStoreClient.swift */; };
+		5EF53C2F2B7BA7B800E417E5 /* RegistryComponentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF53C2E2B7BA7B800E417E5 /* RegistryComponentData.swift */; };
+		5EF53C312B7BA84100E417E5 /* RegistryComponentAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF53C302B7BA84100E417E5 /* RegistryComponentAPIRequest.swift */; };
+		5EF53C342B7BA8D300E417E5 /* RegistryComponentResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF53C332B7BA8D300E417E5 /* RegistryComponentResponseData.swift */; };
+		5EF53C362B7BA95000E417E5 /* RegistryComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF53C352B7BA95000E417E5 /* RegistryComponentTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +77,10 @@
 		5EBC4C5B2B63063A0051C272 /* CapStoreAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapStoreAPIRequest.swift; sourceTree = "<group>"; };
 		5EBCB21E2B6591D8001655DD /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		5EBCB2222B6595AD001655DD /* CapStoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapStoreClient.swift; sourceTree = "<group>"; };
+		5EF53C2E2B7BA7B800E417E5 /* RegistryComponentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistryComponentData.swift; sourceTree = "<group>"; };
+		5EF53C302B7BA84100E417E5 /* RegistryComponentAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistryComponentAPIRequest.swift; sourceTree = "<group>"; };
+		5EF53C332B7BA8D300E417E5 /* RegistryComponentResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistryComponentResponseData.swift; sourceTree = "<group>"; };
+		5EF53C352B7BA95000E417E5 /* RegistryComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistryComponentTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +144,7 @@
 				5E7CC8532B72045500CD5D5D /* FetchComponentTests.swift */,
 				5E36897E2B7A467F001BF6C6 /* FetchAllCategoryTest.swift */,
 				5E4BE0642B7A5138004547A3 /* FetchAllMakerTests.swift */,
+				5EF53C352B7BA95000E417E5 /* RegistryComponentTests.swift */,
 			);
 			path = DomainsTests;
 			sourceTree = "<group>";
@@ -157,14 +166,33 @@
 		5EBC4C562B63029A0051C272 /* CapStoreAPI */ = {
 			isa = PBXGroup;
 			children = (
+				5EF53C322B7BA8C000E417E5 /* Response */,
+				5EF53C2D2B7BA7A600E417E5 /* Data */,
 				5EBC4C592B6303A80051C272 /* FetchCatalogAPIRequest.swift */,
 				5EBC4C5B2B63063A0051C272 /* CapStoreAPIRequest.swift */,
 				5EBCB2222B6595AD001655DD /* CapStoreClient.swift */,
 				5E1574372B72012000047ED4 /* FetchComponentAPIRequest.swift */,
 				5E3689762B7A3D31001BF6C6 /* FetchAllCategoryAPIRequest.swift */,
 				5E3689782B7A3E0E001BF6C6 /* FetchAllMakerAPIRequest.swift */,
+				5EF53C302B7BA84100E417E5 /* RegistryComponentAPIRequest.swift */,
 			);
 			path = CapStoreAPI;
+			sourceTree = "<group>";
+		};
+		5EF53C2D2B7BA7A600E417E5 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5EF53C2E2B7BA7B800E417E5 /* RegistryComponentData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5EF53C322B7BA8C000E417E5 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				5EF53C332B7BA8D300E417E5 /* RegistryComponentResponseData.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +307,7 @@
 				5E1A46642B60EC1300C72265 /* Maker.swift in Sources */,
 				5EBC4C522B6301010051C272 /* APIRequest.swift in Sources */,
 				5EBCB21F2B6591D8001655DD /* HTTPClient.swift in Sources */,
+				5EF53C2F2B7BA7B800E417E5 /* RegistryComponentData.swift in Sources */,
 				5EBC4C462B62F5BA0051C272 /* Component.swift in Sources */,
 				5E3689772B7A3D31001BF6C6 /* FetchAllCategoryAPIRequest.swift in Sources */,
 				5EBC4C4C2B62FBE30051C272 /* ModelError.swift in Sources */,
@@ -290,8 +319,10 @@
 				5E1574382B72012000047ED4 /* FetchComponentAPIRequest.swift in Sources */,
 				5EBCB2232B6595AD001655DD /* CapStoreClient.swift in Sources */,
 				5EBC4C422B62F4510051C272 /* Category.swift in Sources */,
+				5EF53C342B7BA8D300E417E5 /* RegistryComponentResponseData.swift in Sources */,
 				5E15743A2B7202C300047ED4 /* BasePageResponse.swift in Sources */,
 				5EBC4C542B63014A0051C272 /* HTTPMethod.swift in Sources */,
+				5EF53C312B7BA84100E417E5 /* RegistryComponentAPIRequest.swift in Sources */,
 				5EBC4C502B62FF9B0051C272 /* ErrorData.swift in Sources */,
 				5EBC4C5A2B6303A80051C272 /* FetchCatalogAPIRequest.swift in Sources */,
 			);
@@ -301,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EF53C362B7BA95000E417E5 /* RegistryComponentTests.swift in Sources */,
 				5EBC4C482B62F6920051C272 /* ComponentTests.swift in Sources */,
 				5E1A46502B60EBFC00C72265 /* MakerTests.swift in Sources */,
 				5E36897F2B7A467F001BF6C6 /* FetchAllCategoryTest.swift in Sources */,

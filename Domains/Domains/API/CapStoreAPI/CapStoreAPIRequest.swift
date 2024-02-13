@@ -22,9 +22,11 @@ public extension APIRequest{
         
         switch method {
         case .get:
-            if self.queryItems.first != nil{
+            if self.queryItems.count > 0{
                 components?.queryItems = queryItems
             }
+        case .post: break
+            
         default:
             fatalError()
         }
@@ -33,6 +35,7 @@ public extension APIRequest{
         urlRequest.url = components?.url
         urlRequest.httpMethod  = method.rawValue
         
+
         return urlRequest
     }
     
@@ -44,7 +47,6 @@ public extension APIRequest{
         if(200..<300).contains(urlResponse.statusCode){
             return try decoder.decode(Response.self, from: data)
         }else{
-            //TODO
             return try decoder.decode(Response.self, from: data)
         }
     }
