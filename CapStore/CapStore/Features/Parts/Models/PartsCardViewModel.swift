@@ -33,20 +33,23 @@ class PartsCardViewModel : ObservableObject{
         if(self.hasNextPage == false){
             return;
         }
-        
         self.pageSize += INCREASE;
+        
         let response :BasePageResponse<Component> = try await self.dataSource.fetchAsync(pageIndex: self.pageIndex, pageSize: self.pageSize)
         self.response = response;
         self.hasNextPage = response.hasNextPage
         
         if let data = response.data{
-            self.models = data
-                .compactMap({$0})
-                .map{ data in
-                    return PartsCardModel(
-                        componentId: data.componentId, name:data.name, modelName: data.modelName, makerName: data.maker.name
-                    )
-                }
+            DispatchQueue.main.async {
+                self.models = data
+                    .compactMap({$0})
+                    .map{ data in
+                        return PartsCardModel(
+                            componentId: data.componentId, name:data.name, modelName: data.modelName, makerName: data.maker.name
+                        )
+                    }
+            }
+            
         }
     }
     

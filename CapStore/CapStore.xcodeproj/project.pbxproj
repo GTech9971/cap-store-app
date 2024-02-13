@@ -183,6 +183,8 @@
 		5E1A460A2B60EBCF00C72265 /* CapStore */ = {
 			isa = PBXGroup;
 			children = (
+				5EF53C2A2B7B9B7500E417E5 /* Components */,
+				5EF53C292B7B9B6200E417E5 /* Utils */,
 				5ED99A632B701E61006707CF /* Features */,
 				5E1A460B2B60EBCF00C72265 /* CapStoreApp.swift */,
 				5E1A460D2B60EBCF00C72265 /* ContentView.swift */,
@@ -315,6 +317,20 @@
 				5E3689702B7A2D7B001BF6C6 /* RegistryPartsPage.swift */,
 			);
 			path = Pages;
+			sourceTree = "<group>";
+		};
+		5EF53C292B7B9B6200E417E5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		5EF53C2A2B7B9B7500E417E5 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -10,6 +10,9 @@ import Domains
 
 
 struct PartsHomePage: View {
+    
+    @Environment(\.openWindow) private var openWindow
+    
     @State private var selectCardId : UUID?;
     @State private var searchText : String = "";
     
@@ -54,14 +57,7 @@ struct PartsHomePage: View {
     .toolbar(content: {
         ToolbarItem(id:"new", placement: .navigation){
             Button(action:{
-                guard let select = self.$selectCardId.wrappedValue else{
-                    return
-                }
-                
-                let found : PartsCardModel? = self.partsCardViewModel.getByUUID(uuid: select)
-                
-                
-                print(found ?? "Not Found");
+                openWindow(id: "registry")
             }, label:{
                 Label("new", systemImage: "square.and.pencil")
             })

@@ -13,5 +13,8 @@ struct CapStoreApp: App {
         WindowGroup {
             ContentView()
         }
+        WindowGroup(id : "registry"){
+            RegistryPartsPage()
+        }
     }
 }
