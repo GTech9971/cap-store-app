@@ -19,10 +19,12 @@ public struct FetchComponentAPIRequest : APIRequest{
     
     public let pageIndex : Int
     public let pageSize : Int
+    public let categoryId : Int?
     
-    public init(pageIndex: Int, pageSize: Int) {
+    public init(pageIndex: Int, pageSize: Int, categoryId: Int? = nil) {
         self.pageIndex = pageIndex
         self.pageSize = pageSize
+        self.categoryId = categoryId
     }
     
     public var method : HTTPMethod{
@@ -34,9 +36,16 @@ public struct FetchComponentAPIRequest : APIRequest{
     }
     
     public var queryItems: [URLQueryItem]{
-        return [
+        var items = [
             URLQueryItem(name:"pageIndex", value:String(pageIndex)),
             URLQueryItem(name:"pageSize", value: String(pageSize))
         ]
+        
+        if let categoryId : Int = self.categoryId{
+            items.append(URLQueryItem(name:"filterColumn", value: "CategoryId"))
+            items.append(URLQueryItem(name:"filterQuery", value: String(categoryId)))
+        }
+        
+        return items;
     }
 }

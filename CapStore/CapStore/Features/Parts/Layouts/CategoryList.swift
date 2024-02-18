@@ -9,21 +9,19 @@ import SwiftUI
 import Domains
 
 struct CategoryList: View {
-    @Binding var selection :Domains.Category?;
-
+    @Binding var selection :UUID?;
+    
     public let categories:[Domains.Category];
     
     var body: some View {
         List(selection : self.$selection){
             ForEach(self.categories){ category in
-                NavigationLink(value : category.id){
-                    CategoryLinkItem(model: category)
-                }
+                CategoryLinkItem(model: category)
             }
         }
     }
 }
 
 #Preview {
-    CategoryList(selection: .constant(Domains.Category(categoryId: 0, name: "", image: nil)), categories:Domains.Category.SAMPLES)
+    CategoryList(selection: .constant(UUID()), categories:Domains.Category.SAMPLES)
 }

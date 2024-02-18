@@ -25,36 +25,81 @@ class PartsHomeViewModel : ObservableObject{
     private let dataSource: ComponentFetcher
     private let dataSourceCategories: CategoryFetcher
     
+    private var selectedCategoryId: Int? = nil;
+    
     init() {
         self.dataSource = ComponentFetcher()
         self.dataSourceCategories = CategoryFetcher()
     }
     
     
-    /// 電子部品情報を取得する
-    func fetchPartsCard() async throws{
-        if(self.hasNextPage == false){
+    /// カテゴリーIDをもとに電子部品を検索する
+    /// - Parameter categoryUUID: 検索するカテゴリーID
+    func fetchByCategoryIdAsync(categoryUUID : UUID?) async throws{
+        guard let uuid:UUID = categoryUUID else{
             return;
         }
-        self.pageSize += INCREASE;
         
-        let response :BasePageResponse<Component> = try await self.dataSource.fetchAsync(pageIndex: self.pageIndex, pageSize: self.pageSize)
+        guard let id: Int = getCategoryIdByUUID(uuid: uuid) else{
+            return;
+        }
+        
+        self.selectedCategoryId = id
+        //取得データ初期化
+        self.pageSize = INCREASE;
+        let response :BasePageResponse<Component> = try await self.dataSource.fetchAsync(pageIndex: self.pageIndex,
+                                                                                         pageSize: self.pageSize,
+                                                                                         categoryId: self.selectedCategoryId)
+        
         self.response = response;
         self.hasNextPage = response.hasNextPage
         
-        if let data = response.data{
-            DispatchQueue.main.async {
-                self.models = data
-                    .compactMap({$0})
-                    .map{ data in
-                        return PartsCardModel(
-                            componentId: data.componentId, name:data.name, modelName: data.modelName, makerName: data.maker.name
-                        )
-                    }
-            }
+        guard let data = response.data else{
+            return;
+        }
+        
+        DispatchQueue.main.async {
+            self.models = data
+                .compactMap({$0})
+                .map{ data in
+                    return PartsCardModel(
+                        componentId: data.componentId, name:data.name, modelName: data.modelName, makerName: data.maker.name
+                    )
+                }
+        }
+        
+    }
+    
+    /// 電子部品情報を取得する
+    func fetchNextAsync() async throws{
+        if(self.hasNextPage == false){
+            return;
+        }
+        
+        self.pageSize += INCREASE;
+        let response :BasePageResponse<Component> = try await self.dataSource.fetchAsync(pageIndex: self.pageIndex,
+                                                                                         pageSize: self.pageSize,
+                                                                                         categoryId: self.selectedCategoryId)
+        self.response = response;
+        self.hasNextPage = response.hasNextPage
+        
+        guard let data = response.data else{
+            return;
+        }
+        
+        DispatchQueue.main.async {
+            self.models = data
+                .compactMap({$0})
+                .map{ data in
+                    return PartsCardModel(
+                        componentId: data.componentId, name:data.name, modelName: data.modelName, makerName: data.maker.name
+                    )
+                }
         }
     }
     
+    
+    /// 全カテゴリーを取得
     func fetchAllCategoriesAsync() async throws{
         let response : BaseResponse<Domains.Category> = try await self.dataSourceCategories.fetchAllAsync()
         if let data = response.data{
@@ -79,6 +124,17 @@ class PartsHomeViewModel : ObservableObject{
         return self.models
             .filter({$0.id == uuid})
             .map({$0.componentId})
+            .first
+    }
+    
+    
+    /// 選択中のカテゴリーIDを取得する
+    /// - Parameter uuid: 選択中のカテゴリーUUID
+    /// - Returns: 選択中のカテゴリーID
+    func getCategoryIdByUUID(uuid:UUID) -> Int?{
+        return self.categories
+            .filter({$0.id == uuid})
+            .map({$0.categoryId})
             .first
     }
     

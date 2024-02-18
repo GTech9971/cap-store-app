@@ -16,8 +16,8 @@ class ComponentFetcher{
         self.capStoreClient = CapStoreClient(httpClient: URLSession.shared)
     }
     
-    func fetchAsync(pageIndex:Int = 0, pageSize: Int = 10) async throws -> BasePageResponse<Component>{
-        let request : FetchComponentAPIRequest = FetchComponentAPIRequest(pageIndex: pageIndex, pageSize: pageSize)
+    func fetchAsync(pageIndex:Int = 0, pageSize: Int = 10, categoryId: Int? = nil) async throws -> BasePageResponse<Component>{
+        let request : FetchComponentAPIRequest = FetchComponentAPIRequest(pageIndex: pageIndex, pageSize: pageSize, categoryId: categoryId)
         let response : FetchComponentAPIRequest.Response = try await self.capStoreClient.sendAsync(request: request)
         return response
     }
