@@ -15,8 +15,10 @@ struct CategoryList: View {
     
     var body: some View {
         List(selection : self.$selection){
-            ForEach(self.categories){ category in
-                CategoryLinkItem(model: category)
+            Section(header:Text("電子部品マスター")){
+                ForEach(self.categories){ category in
+                    CategoryLinkItem(model: category)
+                }
             }
         }
     }

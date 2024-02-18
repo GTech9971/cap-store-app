@@ -14,6 +14,9 @@ struct PartsHomePage: View {
     @Environment(\.openWindow) private var openWindow
     
     @State private var selectCardId : UUID?;
+    
+    @State private var selectedOperationId:UUID?;
+    
     @State private var searchText : String = "";
     @State private var selectedCategoryId : UUID?
     
@@ -45,24 +48,38 @@ struct PartsHomePage: View {
     
     var body: some View {
         NavigationSplitView{
-            CategoryList(selection: self.$selectedCategoryId, categories: self.viewModel.categories)
-                .navigationSplitViewColumnWidth(200)
-                .navigationTitle("電子部品マスター")
-                .onChange(of: self.selectedCategoryId){
-                    self.onChangeSelectCategoryId()
+            InventoryOperationList(selection: self.$selectedOperationId)
+                .onChange(of: self.selectedOperationId){
+                    self.selectedCategoryId = nil;
                 }
+            CategoryList(selection: self.$selectedCategoryId,
+                         categories: self.viewModel.categories)
+            .onChange(of: self.selectedCategoryId){
+                self.selectedOperationId = nil;
+                self.onChangeSelectCategoryId()
+            }
         }
     content:{
-        PartsCardList(selection: $selectCardId, models: self.viewModel.models)
-            .onScrollEnd{ model in
-                //最後の要素が表示された際の処理
-                self.fetchParts()
-            }
-            .navigationSplitViewColumnWidth(300)
+        if self.selectedOperationId != nil{
+            Text("AA")
+        }else{
+            PartsCardList(selection: $selectCardId, models: self.viewModel.models)
+                .onScrollEnd{ model in
+                    //最後の要素が表示された際の処理
+                    self.fetchParts()
+                }
+                .navigationSplitViewColumnWidth(300)
+        }
+       
     }
     detail: {
+        if self.selectedOperationId != nil{
+            Text("Detail")
+        }else{
             PartsContentView(model: self.viewModel.getByUUID(uuid: self.$selectCardId.wrappedValue))
-        Spacer()
+            Spacer()
+        }
+        
     }
     .navigationTitle("電子部品マスター")
     .task {
@@ -75,7 +92,10 @@ struct PartsHomePage: View {
         
         self.fetchParts()
     }
-    .frame(minWidth: 1000, idealWidth: 1200, minHeight: 500, idealHeight: 600)
+    .frame(minWidth: 1000,
+           idealWidth: 1200,
+           minHeight: 500,
+           idealHeight: 600)
     .toolbar(content: {
         ToolbarItem(id:"new", placement: .navigation){
             Button(action:{

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E01D47C2B82332800ABF8D4 /* InventoryOperationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E01D47B2B82332800ABF8D4 /* InventoryOperationList.swift */; };
+		5E01D47E2B8234AF00ABF8D4 /* InventoryOperationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E01D47D2B8234AF00ABF8D4 /* InventoryOperationItem.swift */; };
+		5E01D4802B8234DD00ABF8D4 /* InventoryOperationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E01D47F2B8234DD00ABF8D4 /* InventoryOperationModel.swift */; };
 		5E1030012B78F32D000CF729 /* PartsContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1030002B78F32D000CF729 /* PartsContentModel.swift */; };
 		5E15742C2B71C4DE00047ED4 /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E15742B2B71C4DE00047ED4 /* CategoryList.swift */; };
 		5E1574302B71C60A00047ED4 /* PartsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E15742F2B71C60A00047ED4 /* PartsHeader.swift */; };
@@ -98,6 +101,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5E01D47B2B82332800ABF8D4 /* InventoryOperationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryOperationList.swift; sourceTree = "<group>"; };
+		5E01D47D2B8234AF00ABF8D4 /* InventoryOperationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryOperationItem.swift; sourceTree = "<group>"; };
+		5E01D47F2B8234DD00ABF8D4 /* InventoryOperationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryOperationModel.swift; sourceTree = "<group>"; };
 		5E1030002B78F32D000CF729 /* PartsContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsContentModel.swift; sourceTree = "<group>"; };
 		5E15742B2B71C4DE00047ED4 /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
 		5E15742F2B71C60A00047ED4 /* PartsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsHeader.swift; sourceTree = "<group>"; };
@@ -286,6 +292,7 @@
 				5ED99A6B2B702B5C006707CF /* PartsCardList.swift */,
 				5ED99A712B703851006707CF /* CategoryLinkItem.swift */,
 				5E1574312B71C61A00047ED4 /* PartsImage.swift */,
+				5E01D47D2B8234AF00ABF8D4 /* InventoryOperationItem.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -298,6 +305,7 @@
 				5EAAE0AE2B76699300E7F8DF /* PartsImageModel.swift */,
 				5E1030002B78F32D000CF729 /* PartsContentModel.swift */,
 				5EA926102B790B2700C05435 /* PartsHeaderModels.swift */,
+				5E01D47F2B8234DD00ABF8D4 /* InventoryOperationModel.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -309,6 +317,7 @@
 				5E15742F2B71C60A00047ED4 /* PartsHeader.swift */,
 				5E1574332B71CDA100047ED4 /* PartsContent.swift */,
 				5E1574352B71D8B500047ED4 /* PartsContentView.swift */,
+				5E01D47B2B82332800ABF8D4 /* InventoryOperationList.swift */,
 			);
 			path = Layouts;
 			sourceTree = "<group>";
@@ -495,14 +504,17 @@
 				5ED99A6A2B701FAF006707CF /* PartsCardModel.swift in Sources */,
 				5E1574302B71C60A00047ED4 /* PartsHeader.swift in Sources */,
 				5ED99A702B70379A006707CF /* PartsHomePage.swift in Sources */,
+				5E01D47E2B8234AF00ABF8D4 /* InventoryOperationItem.swift in Sources */,
 				5E3689712B7A2D7B001BF6C6 /* RegistryPartsPage.swift in Sources */,
 				5ED99A6C2B702B5C006707CF /* PartsCardList.swift in Sources */,
 				5EAAE0AF2B76699300E7F8DF /* PartsImageModel.swift in Sources */,
 				5E1A460E2B60EBCF00C72265 /* ContentView.swift in Sources */,
+				5E01D47C2B82332800ABF8D4 /* InventoryOperationList.swift in Sources */,
 				5E1A460C2B60EBCF00C72265 /* CapStoreApp.swift in Sources */,
 				5E1574322B71C61A00047ED4 /* PartsImage.swift in Sources */,
 				5ED99A672B701E9F006707CF /* PartsCard.swift in Sources */,
 				5ED99A722B703851006707CF /* CategoryLinkItem.swift in Sources */,
+				5E01D4802B8234DD00ABF8D4 /* InventoryOperationModel.swift in Sources */,
 				5E7CC85A2B7206AD00CD5D5D /* PartsHomeViewModel.swift in Sources */,
 				5E36897B2B7A3E48001BF6C6 /* MakerFetcher.swift in Sources */,
 				5E36897D2B7A3EF2001BF6C6 /* RegistryPartsViewModel.swift in Sources */,
